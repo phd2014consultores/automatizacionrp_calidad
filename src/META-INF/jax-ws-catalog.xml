@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/home/mmarquez/QueryApp.wsdl" uri="wsdl/QueryApp.wsdl"/>
+    <system systemId="file:/home/mmarquez/CargaInicial.wsdl" uri="wsdl/CargaInicial.wsdl"/>
+    <system systemId="file:/home/mmarquez/Mediacion.wsdl" uri="wsdl/Mediacion.wsdl"/>
+</catalog>
