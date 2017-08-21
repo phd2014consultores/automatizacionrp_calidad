@@ -34,18 +34,19 @@ public class obtenerParametros {
                     + "jo.job FROM public.config as conf, public.plan_ejecuciones as pe , "
                     + "public.pasos_plan_ejecucion as ppe , public.jobs as jo WHERE conf.activo=true "
                     + "and elemento='pdi' and pe.id_job=jo.id_job and pe.id_plan_ejecucion=ppe.id_plan_ejecucion "
-                    + "and ppe.status_plan='en espera' and pe.timestamp_planificacion in "
+                    + "and ppe.status_plan='en espera' and ppe.activo=true and pe.timestamp_planificacion in "
                     + "(SELECT min(pe.timestamp_planificacion) FROM public.config as conf, "
                     + "public.plan_ejecuciones as pe , public.pasos_plan_ejecucion as ppe "
                     + "WHERE conf.activo=true and elemento='pdi'and pe.id_plan_ejecucion=ppe.id_plan_ejecucion "
-                    + "and ppe.status_plan='en espera' ) and pe.timestamp_planificacion::timestamp <= now()::timestamp LIMIT 1;");
+                    + "and ppe.status_plan='en espera' and ppe.activo=true) and pe.timestamp_planificacion::timestamp <= now()::timestamp LIMIT 1;");
            
         } catch (Exception e) {
             // TODO Auto-generated catch block
             log.error("Excepción obteniendo parámetros pdi 1 :");
             log.error(e);
+            pdi="";
         }
-        if(pdi.equals("[]")){
+        if(pdi.equals("[]") || pdi.equals("")){
         log.info("No existe planificacion pendiente");
         return param;
         }
@@ -62,20 +63,20 @@ public class obtenerParametros {
                     + "jo.job FROM public.config as conf, public.plan_ejecuciones as pe , "
                     + "public.pasos_plan_ejecucion as ppe , public.jobs as jo WHERE conf.activo=true "
                     + "and elemento='cluster' and pe.id_job=jo.id_job and pe.id_plan_ejecucion=ppe.id_plan_ejecucion "
-                    + "and ppe.status_plan='en espera' and pe.timestamp_planificacion in "
+                    + "and ppe.status_plan='en espera' and ppe.activo=true and pe.timestamp_planificacion in "
                     + "(SELECT min(pe.timestamp_planificacion) FROM public.config as conf, "
                     + "public.plan_ejecuciones as pe , public.pasos_plan_ejecucion as ppe "
                     + "WHERE conf.activo=true and elemento='cluster'and pe.id_plan_ejecucion=ppe.id_plan_ejecucion "
-                    + "and ppe.status_plan='en espera' ) and pe.timestamp_planificacion::timestamp <= now()::timestamp limit 1;");
+                    + "and ppe.status_plan='en espera' and ppe.activo=true) and pe.timestamp_planificacion::timestamp <= now()::timestamp limit 1;");
 
 
             bd_pys = Servicio.queryapp("SELECT  conf.json_config , pe.id_plan_ejecucion , jo.job "
                     + "FROM public.config as conf, public.plan_ejecuciones as pe , public.pasos_plan_ejecucion as ppe, "
                     + "public.jobs as jo WHERE conf.activo=true and elemento='bd_pys' and pe.id_job=jo.id_job "
-                    + "and pe.id_plan_ejecucion=ppe.id_plan_ejecucion and ppe.status_plan='en espera' "
+                    + "and pe.id_plan_ejecucion=ppe.id_plan_ejecucion and ppe.status_plan='en espera' and ppe.activo=true"
                     + "and pe.timestamp_planificacion in (SELECT min(pe.timestamp_planificacion) FROM public.config as conf,"
                     + "public.plan_ejecuciones as pe , public.pasos_plan_ejecucion as ppe WHERE conf.activo=true "
-                    + "and elemento='bd_pys'and pe.id_plan_ejecucion=ppe.id_plan_ejecucion and ppe.status_plan='en espera' ) "
+                    + "and elemento='bd_pys'and pe.id_plan_ejecucion=ppe.id_plan_ejecucion and ppe.status_plan='en espera' and ppe.activo=true) "
                     + "and pe.timestamp_planificacion::timestamp <= now()::timestamp limit 1;");
 
 
@@ -85,6 +86,9 @@ public class obtenerParametros {
         } catch (Exception e) {
             log.error("Excepción obteniendo parámetros cluster , bd_pys y tienda :");
             log.error(e);
+            tienda="";
+            cluster="";
+            bd_pys="";
         }
         bandera = true;
 
@@ -149,7 +153,7 @@ public class obtenerParametros {
         }else{
             log.warn("No se obtuvieron los valores del PDI");
         }
-        if(!cluster.equals("[]")){
+        if(!cluster.equals("[]") && !cluster.equals("")){
             aux = "";
             cluster = cluster.substring(1, cluster.length()-1);
             elementObject = parser.parse(cluster);                   
@@ -177,7 +181,7 @@ public class obtenerParametros {
         }else{
            log.warn("No se obtuvieron los valores del cluster");
         }
-        if(!bd_pys.equals("[]")){
+        if(!bd_pys.equals("[]") && !bd_pys.equals("")){
             aux = "";
             bd_pys = bd_pys.substring(1, bd_pys.length()-1);
             elementObject = parser.parse(bd_pys);                   
@@ -202,7 +206,7 @@ public class obtenerParametros {
         }else{
            log.warn("No se obtuvieron los valores de bd_pys");
         }
-        if(!tienda.equals("[]")){
+        if(!tienda.equals("[]") && !tienda.equals("")){
             aux = "";
             tienda = tienda.substring(1, tienda.length()-1);
             elementObject = parser.parse(tienda);                   
