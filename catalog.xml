@@ -3,4 +3,7 @@
     <system systemId="file:/home/mmarquez/CargaInicial.wsdl" uri="xml-resources/web-service-references/CargaInicial/wsdl/CargaInicial.wsdl"/>
     <system systemId="file:/home/mmarquez/Mediacion.wsdl" uri="xml-resources/web-service-references/Mediacion/wsdl/Mediacion.wsdl"/>
     <system systemId="file:/home/mmarquez/QueryApp.wsdl" uri="xml-resources/web-service-references/QueryApp/wsdl/QueryApp.wsdl"/>
+    <system systemId="file:/home/phd2014/Descargas/QueryApp.wsdl" uri="xml-resources/web-service-references/QueryApp/wsdl/QueryApp.wsdl"/>
+    <system systemId="file:/home/phd2014/Descargas/CargaInicial.wsdl" uri="xml-resources/web-service-references/CargaInicial/wsdl/CargaInicial.wsdl"/>
+    <system systemId="file:/home/phd2014/Descargas/Mediacion.wsdl" uri="xml-resources/web-service-references/Mediacion/wsdl/Mediacion.wsdl"/>
 </catalog>
