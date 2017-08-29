@@ -60,7 +60,7 @@
   </wsdl:binding>
   <wsdl:service name="QueryAppService">
     <wsdl:port binding="tns:QueryAppServiceSoapBinding" name="QueryAppPort">
-      <soap12:address location="https://ws.mercal-qa.gob.ve:8443/QueryApp/services/QueryApp"/>
+      <soap12:address location="https://esb.mercal-qa.gob.ve:8448/ws-bigdata/queryapp"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

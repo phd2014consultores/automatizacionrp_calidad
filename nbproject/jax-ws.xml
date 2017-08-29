@@ -2,9 +2,9 @@
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services/>
   <clients>
-    <client name="CargaInicial">
-      <wsdl-url>file:/home/phd2014/Descargas/CargaInicial.wsdl</wsdl-url>
-      <local-wsdl-file>CargaInicial.wsdl</local-wsdl-file>
+    <client name="cargainicial">
+      <wsdl-url>file:/home/phd2014/Descargas/cargainicial.wsdl</wsdl-url>
+      <local-wsdl-file>cargainicial.wsdl</local-wsdl-file>
       <package-name>ve.gob.mercal.ws</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -22,7 +22,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>file:/home/phd2014/Descargas/CargaInicial.wsdl</wsimport-option-value>
+          <wsimport-option-value>file:/home/phd2014/Descargas/cargainicial.wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -34,9 +34,9 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="Mediacion">
-      <wsdl-url>file:/home/phd2014/Descargas/Mediacion.wsdl</wsdl-url>
-      <local-wsdl-file>Mediacion.wsdl</local-wsdl-file>
+    <client name="mediacion">
+      <wsdl-url>file:/home/phd2014/Descargas/mediacion.wsdl</wsdl-url>
+      <local-wsdl-file>mediacion.wsdl</local-wsdl-file>
       <package-name>ve.gob.mercal.ws</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -54,7 +54,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>file:/home/phd2014/Descargas/Mediacion.wsdl</wsimport-option-value>
+          <wsimport-option-value>file:/home/phd2014/Descargas/mediacion.wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -66,9 +66,9 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="QueryApp">
-      <wsdl-url>file:/home/phd2014/Descargas/QueryApp.wsdl</wsdl-url>
-      <local-wsdl-file>QueryApp.wsdl</local-wsdl-file>
+    <client name="queryapp">
+      <wsdl-url>file:/home/phd2014/Descargas/queryapp.wsdl</wsdl-url>
+      <local-wsdl-file>queryapp.wsdl</local-wsdl-file>
       <package-name>ve.gob.mercal.ws</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -86,7 +86,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>file:/home/phd2014/Descargas/QueryApp.wsdl</wsimport-option-value>
+          <wsimport-option-value>file:/home/phd2014/Descargas/queryapp.wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

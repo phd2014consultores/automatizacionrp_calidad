@@ -80,7 +80,7 @@
   </wsdl:binding>
   <wsdl:service name="MediacionService">
     <wsdl:port binding="tns:MediacionServiceSoapBinding" name="MediacionPort">
-      <soap12:address location="https://ws.mercal-qa.gob.ve:8443/Mediacion/services/Mediacion"/>
+      <soap12:address location="https://esb.mercal-qa.gob.ve:8448/ws-bigdata/mediacion"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

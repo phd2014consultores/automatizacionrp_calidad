@@ -45,12 +45,12 @@
     <wsdl:part element="tns:ExcepcionServicio" name="ExcepcionServicio">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="cargainicialResponse">
-    <wsdl:part element="tns:cargainicialResponse" name="parameters">
-    </wsdl:part>
-  </wsdl:message>
   <wsdl:message name="cargainicial">
     <wsdl:part element="tns:cargainicial" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cargainicialResponse">
+    <wsdl:part element="tns:cargainicialResponse" name="parameters">
     </wsdl:part>
   </wsdl:message>
   <wsdl:portType name="CargaInicial">
@@ -80,7 +80,7 @@
   </wsdl:binding>
   <wsdl:service name="CargaInicialService">
     <wsdl:port binding="tns:CargaInicialServiceSoapBinding" name="CargaInicialPort">
-      <soap:address location="https://ws.mercal-qa.gob.ve:8443/CargaInicial/services/CargaInicial"/>
+      <soap:address location="https://10.24.26.67:8448/ws-bigdata/cargainicial"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

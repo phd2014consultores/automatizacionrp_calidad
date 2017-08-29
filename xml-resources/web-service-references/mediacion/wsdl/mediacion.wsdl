@@ -1,9 +1,9 @@
-<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.mercal.gob.ve/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="CargaInicialService" targetNamespace="http://ws.mercal.gob.ve/">
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.mercal.gob.ve/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="MediacionService" targetNamespace="http://ws.mercal.gob.ve/">
   <wsdl:types>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.mercal.gob.ve/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ws.mercal.gob.ve/">
-  <xs:element name="cargainicial" type="tns:cargainicial"/>
-  <xs:element name="cargainicialResponse" type="tns:cargainicialResponse"/>
-  <xs:complexType name="cargainicial">
+  <xs:element name="mediacion" type="tns:mediacion"/>
+  <xs:element name="mediacionResponse" type="tns:mediacionResponse"/>
+  <xs:complexType name="mediacion">
     <xs:sequence>
       <xs:element name="dirPDI" type="xs:string"/>
       <xs:element name="nombreJob" type="xs:string"/>
@@ -28,7 +28,7 @@
       <xs:element name="nivelLogs" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="cargainicialResponse">
+  <xs:complexType name="mediacionResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int"/>
     </xs:sequence>
@@ -45,42 +45,42 @@
     <wsdl:part element="tns:ExcepcionServicio" name="ExcepcionServicio">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="cargainicialResponse">
-    <wsdl:part element="tns:cargainicialResponse" name="parameters">
+  <wsdl:message name="mediacionResponse">
+    <wsdl:part element="tns:mediacionResponse" name="parameters">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="cargainicial">
-    <wsdl:part element="tns:cargainicial" name="parameters">
+  <wsdl:message name="mediacion">
+    <wsdl:part element="tns:mediacion" name="parameters">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="CargaInicial">
-    <wsdl:operation name="cargainicial">
-      <wsdl:input message="tns:cargainicial" name="cargainicial">
+  <wsdl:portType name="Mediacion">
+    <wsdl:operation name="mediacion">
+      <wsdl:input message="tns:mediacion" name="mediacion">
     </wsdl:input>
-      <wsdl:output message="tns:cargainicialResponse" name="cargainicialResponse">
+      <wsdl:output message="tns:mediacionResponse" name="mediacionResponse">
     </wsdl:output>
       <wsdl:fault message="tns:ExcepcionServicio" name="ExcepcionServicio">
     </wsdl:fault>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="CargaInicialServiceSoapBinding" type="tns:CargaInicial">
-    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="cargainicial">
-      <soap:operation soapAction="urn:Cargainicial" style="document"/>
-      <wsdl:input name="cargainicial">
-        <soap:body use="literal"/>
+  <wsdl:binding name="MediacionServiceSoapBinding" type="tns:Mediacion">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="mediacion">
+      <soap12:operation soapAction="urn:Mediacion" style="document"/>
+      <wsdl:input name="mediacion">
+        <soap12:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="cargainicialResponse">
-        <soap:body use="literal"/>
+      <wsdl:output name="mediacionResponse">
+        <soap12:body use="literal"/>
       </wsdl:output>
       <wsdl:fault name="ExcepcionServicio">
-        <soap:fault name="ExcepcionServicio" use="literal"/>
+        <soap12:fault name="ExcepcionServicio" use="literal"/>
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="CargaInicialService">
-    <wsdl:port binding="tns:CargaInicialServiceSoapBinding" name="CargaInicialPort">
-      <soap:address location="https://ws.mercal-qa.gob.ve:8443/CargaInicial/services/CargaInicial"/>
+  <wsdl:service name="MediacionService">
+    <wsdl:port binding="tns:MediacionServiceSoapBinding" name="MediacionPort">
+      <soap12:address location="https://10.24.26.67:8448/ws-bigdata/mediacion"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

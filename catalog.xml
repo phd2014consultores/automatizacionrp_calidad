@@ -6,4 +6,7 @@
     <system systemId="file:/home/phd2014/Descargas/CargaInicial.wsdl" uri="xml-resources/web-service-references/CargaInicial/wsdl/CargaInicial.wsdl"/>
     <system systemId="file:/home/phd2014/Descargas/Mediacion.wsdl" uri="xml-resources/web-service-references/Mediacion/wsdl/Mediacion.wsdl"/>
     <system systemId="file:/home/phd2014/Descargas/QueryApp.wsdl" uri="xml-resources/web-service-references/QueryApp/wsdl/QueryApp.wsdl"/>
+    <system systemId="file:/home/phd2014/Descargas/cargainicial.wsdl" uri="xml-resources/web-service-references/cargainicial/wsdl/cargainicial.wsdl"/>
+    <system systemId="file:/home/phd2014/Descargas/mediacion.wsdl" uri="xml-resources/web-service-references/mediacion/wsdl/mediacion.wsdl"/>
+    <system systemId="file:/home/phd2014/Descargas/queryapp.wsdl" uri="xml-resources/web-service-references/queryapp/wsdl/queryapp.wsdl"/>
 </catalog>
